@@ -1,5 +1,5 @@
 import Colors from "@/constants/Colors";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -26,12 +26,11 @@ const Page = () => {
           Tap "Agree & Continue" to accept the{" "}
           <Text style={styles.link}>Terms of service.</Text>
         </Text>
-        <TouchableOpacity
-          onPress={() => router.push("/otp")}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Agree & Continue</Text>
-        </TouchableOpacity>
+        <Link href="/otp" replace asChild>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Agree & Continue</Text>
+          </TouchableOpacity>
+        </Link>
       </View>
     </SafeAreaView>
   );
