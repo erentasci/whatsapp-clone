@@ -1,5 +1,5 @@
 import Colors from "@/constants/Colors";
-import { Link, useRouter } from "expo-router";
+import { Link } from "expo-router";
 import {
   Image,
   SafeAreaView,
@@ -14,8 +14,6 @@ const WELCOME_IMAGE = Image.resolveAssetSource(
 ).uri;
 
 const Page = () => {
-  const router = useRouter();
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
