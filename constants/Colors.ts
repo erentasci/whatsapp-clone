@@ -6,4 +6,9 @@ export default {
   white: "#fff",
   background: "#EFEEF6",
   disabled: "#DCDBE2",
+  muted: "#3A5A92",
+  green: "#4FEE57",
+  lightGreen: "#DBFFCB",
+  red: "#EF0827",
+  yellow: "#FCC70B",
 };
