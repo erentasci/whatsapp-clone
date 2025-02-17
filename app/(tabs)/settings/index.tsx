@@ -75,81 +75,95 @@ const Settings = () => {
   const { signOut } = useAuth();
 
   return (
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      style={{ flex: 1, backgroundColor: Colors.background }}
-    >
-      <View style={defaultStyles.block}>
-        <FlatList
-          data={devices}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => (
-            <View style={defaultStyles.separator} />
-          )}
-          renderItem={({ item }) => (
-            <View style={defaultStyles.item}>
-              <BoxedIcon
-                name={item.icon}
-                backgroundColor={item.backgroundColor}
-              />
-              <Text style={{ fontSize: 18, flex: 1 }}>{item.name}</Text>
-              <Ionicons name="chevron-forward" size={20} color={Colors.gray} />
-            </View>
-          )}
-        />
-      </View>
-      <View style={defaultStyles.block}>
-        <FlatList
-          data={items}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => (
-            <View style={defaultStyles.separator} />
-          )}
-          renderItem={({ item }) => (
-            <View style={defaultStyles.item}>
-              <BoxedIcon
-                name={item.icon}
-                backgroundColor={item.backgroundColor}
-              />
-              <Text style={{ fontSize: 18, flex: 1 }}>{item.name}</Text>
-              <Ionicons name="chevron-forward" size={20} color={Colors.gray} />
-            </View>
-          )}
-        />
-      </View>
-      <View style={defaultStyles.block}>
-        <FlatList
-          data={support}
-          scrollEnabled={false}
-          ItemSeparatorComponent={() => (
-            <View style={defaultStyles.separator} />
-          )}
-          renderItem={({ item }) => (
-            <View style={defaultStyles.item}>
-              <BoxedIcon
-                name={item.icon}
-                backgroundColor={item.backgroundColor}
-              />
-              <Text style={{ fontSize: 18, flex: 1 }}>{item.name}</Text>
-              <Ionicons name="chevron-forward" size={20} color={Colors.gray} />
-            </View>
-          )}
-        />
-      </View>
+    <View style={{ flex: 1 }}>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={{ backgroundColor: Colors.background }}
+      >
+        <View style={defaultStyles.block}>
+          <FlatList
+            data={devices}
+            scrollEnabled={false}
+            ItemSeparatorComponent={() => (
+              <View style={defaultStyles.separator} />
+            )}
+            renderItem={({ item }) => (
+              <View style={defaultStyles.item}>
+                <BoxedIcon
+                  name={item.icon}
+                  backgroundColor={item.backgroundColor}
+                />
+                <Text style={{ fontSize: 18, flex: 1 }}>{item.name}</Text>
+                <Ionicons
+                  name="chevron-forward"
+                  size={20}
+                  color={Colors.gray}
+                />
+              </View>
+            )}
+          />
+        </View>
+        <View style={defaultStyles.block}>
+          <FlatList
+            data={items}
+            scrollEnabled={false}
+            ItemSeparatorComponent={() => (
+              <View style={defaultStyles.separator} />
+            )}
+            renderItem={({ item }) => (
+              <View style={defaultStyles.item}>
+                <BoxedIcon
+                  name={item.icon}
+                  backgroundColor={item.backgroundColor}
+                />
+                <Text style={{ fontSize: 18, flex: 1 }}>{item.name}</Text>
+                <Ionicons
+                  name="chevron-forward"
+                  size={20}
+                  color={Colors.gray}
+                />
+              </View>
+            )}
+          />
+        </View>
+        <View style={defaultStyles.block}>
+          <FlatList
+            data={support}
+            scrollEnabled={false}
+            ItemSeparatorComponent={() => (
+              <View style={defaultStyles.separator} />
+            )}
+            renderItem={({ item }) => (
+              <View style={defaultStyles.item}>
+                <BoxedIcon
+                  name={item.icon}
+                  backgroundColor={item.backgroundColor}
+                />
+                <Text style={{ fontSize: 18, flex: 1 }}>{item.name}</Text>
+                <Ionicons
+                  name="chevron-forward"
+                  size={20}
+                  color={Colors.gray}
+                />
+              </View>
+            )}
+          />
+        </View>
 
-      <TouchableOpacity onPress={() => signOut()}>
-        <Text
-          style={{
-            fontSize: 18,
-            color: Colors.primary,
-            textAlign: "center",
-            paddingVertical: 14,
-          }}
-        >
-          Sign Out
-        </Text>
-      </TouchableOpacity>
-    </ScrollView>
+        <TouchableOpacity onPress={() => signOut()}>
+          <Text
+            style={{
+              fontSize: 18,
+              color: Colors.primary,
+              textAlign: "center",
+              paddingVertical: 14,
+            }}
+          >
+            Sign Out
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
   );
 };
 
