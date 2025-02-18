@@ -35,7 +35,6 @@ const TabsLayout = () => {
         name="calls"
         options={{
           title: "Calls",
-          headerShown: false,
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons
               name="phone-outline"
@@ -43,6 +42,7 @@ const TabsLayout = () => {
               color={color}
             />
           ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen

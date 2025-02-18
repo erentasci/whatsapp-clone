@@ -7,7 +7,7 @@ const Layout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerTitle: "Calls",
+          title: "Calls",
           headerLargeTitle: true,
           headerShadowVisible: false,
           headerStyle: {
