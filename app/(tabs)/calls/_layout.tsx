@@ -14,7 +14,7 @@ const Layout = () => {
             backgroundColor: Colors.background,
           },
           headerSearchBarOptions: {
-            placeholder: "Calls",
+            placeholder: "Search",
           },
           headerRight: () => (
             <Ionicons name="call-outline" size={30} color={Colors.primary} />
