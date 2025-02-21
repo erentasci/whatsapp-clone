@@ -1,10 +1,13 @@
+import Colors from "@/constants/Colors";
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
+import { Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { Stack, useRouter, useSegments } from "expo-router";
 import * as SecureStore from "expo-secure-store";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { TouchableOpacity } from "react-native";
 
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 // Cache the Clerk JWT
@@ -88,6 +91,36 @@ const InitialLayout = () => {
         }}
       />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="(modals)/new-chat"
+        options={{
+          presentation: "modal",
+          title: "New Chat",
+          headerTransparent: true,
+          headerBlurEffect: "regular",
+          headerStyle: {
+            backgroundColor: Colors.background,
+          },
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => {
+                router.back();
+              }}
+              style={{
+                backgroundColor: Colors.lightGray,
+                borderRadius: 20,
+                padding: 4,
+              }}
+            >
+              <Ionicons name="close" color={Colors.gray} size={25} />
+            </TouchableOpacity>
+          ),
+          headerSearchBarOptions: {
+            placeholder: "Search name or number",
+            hideWhenScrolling: false,
+          },
+        }}
+      />
     </Stack>
   );
 };

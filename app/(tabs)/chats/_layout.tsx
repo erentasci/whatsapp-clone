@@ -1,7 +1,7 @@
 import Colors from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
-import { Stack } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import { Link, Stack } from "expo-router";
+import { TouchableOpacity, View } from "react-native";
 const Layout = () => {
   return (
     <Stack>
@@ -26,14 +26,24 @@ const Layout = () => {
             />
           ),
           headerRight: () => (
-            <TouchableOpacity style={{ flexDirection: "row", gap: 30 }}>
-              <Ionicons
-                name="camera-outline"
-                size={30}
-                color={Colors.primary}
-              />
-              <Ionicons name="add-circle" size={30} color={Colors.primary} />
-            </TouchableOpacity>
+            <View style={{ flexDirection: "row", gap: 30 }}>
+              <TouchableOpacity>
+                <Ionicons
+                  name="camera-outline"
+                  color={Colors.primary}
+                  size={30}
+                />
+              </TouchableOpacity>
+              <Link href="/(modals)/new-chat" asChild>
+                <TouchableOpacity>
+                  <Ionicons
+                    name="add-circle"
+                    color={Colors.primary}
+                    size={30}
+                  />
+                </TouchableOpacity>
+              </Link>
+            </View>
           ),
         }}
       />
