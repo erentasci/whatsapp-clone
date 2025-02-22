@@ -26,7 +26,7 @@ const ChatRow: FC<ChatRowProps> = ({
 }) => {
   return (
     <ChatSwipeableRow>
-      <Link href="/" asChild>
+      <Link href={`/(tabs)/chats/${id}`} asChild>
         <TouchableOpacity
           activeOpacity={0.6}
           style={{
